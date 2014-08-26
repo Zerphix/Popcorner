@@ -1,0 +1,35 @@
+div#movie_list {
+
+	position: absolute;
+
+	margin-bottom: 40px;
+
+	width: 880px;
+	height: auto;
+
+	border: 1px solid gray;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 6px;
+	padding-right: 4px;
+
+	webkit-border-radius: 10px; 
+      -moz-border-radius: 10px; 
+           border-radius: 10px;
+
+	background: white;
+}
+
+div#movie_fromlist {
+
+	float: left;
+
+	margin-left: 8px;
+	margin-right: 8px;
+
+	margin-bottom: 60px;
+
+	width: 130px;
+	height: 190px;
+}
