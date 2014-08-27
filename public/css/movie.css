@@ -47,6 +47,13 @@ p#info_text {
 	margin-bottom: 10px;
 }
 
+p#rents {
+
+	font-size: 14px;
+
+	margin-top: 108px;
+}
+
 strong#rents {
 
 	color: red;
@@ -54,8 +61,8 @@ strong#rents {
 
 img#trailer {
 
-	webkit-border-radius: 8px; 
-      -moz-border-radius: 8px; 
+	webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
            border-radius: 8px;
 }
 
@@ -78,8 +85,8 @@ div#general_info {
 
 	border: 1px solid gray;
 
-	webkit-border-radius: 10px; 
-      -moz-border-radius: 10px; 
+	webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
            border-radius: 10px;
 
 	background: white;
@@ -122,8 +129,8 @@ div#movie_tasks {
 
 	border: 1px solid #3b88c3;
 
-	webkit-border-radius: 5px; 
-      -moz-border-radius: 5px; 
+	webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
            border-radius: 5px;
 
     shadows: inset 0 1px 0 rgba(255,255,255,0.1);
@@ -145,7 +152,7 @@ div#synopsis {
 
 	background: white;
 
-	webkit-border-radius: 10px; 
-      -moz-border-radius: 10px; 
-           border-radius: 10px;	
+	webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+           border-radius: 10px;
 }

@@ -25,7 +25,7 @@ class AuthController extends BaseController
       // 2do grupo - Usuarios sin privilegios
       elseif ($role == 'seller')
       {
-        return Redirect::to('secure');
+        return Redirect::to('home');
       }
     }
 

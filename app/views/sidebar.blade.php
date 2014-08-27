@@ -12,7 +12,7 @@
 
 		<div id="home_task">
 
-			<a class="option" href="">MOVIE OPTIONS</a>
+			<a class="option">MOVIE OPTIONS</a>
 		</div>
 
 		<div id="home_task">
@@ -62,7 +62,7 @@
 
 		<div id="home_task">
 
-			<a class="option" href="">CLIENT OPTIONS</a>
+			<a class="option">CLIENT OPTIONS</a>
 		</div>
 
 		<div id="home_task">
@@ -84,7 +84,7 @@
 
 		<div id="home_task">
 
-			<a class="option" href="">REPORT TASK</a>
+			<a class="option">REPORT TASK</a>
 		</div>
 
 		<div id="home_task">

@@ -12,8 +12,14 @@
 	</head>
 
 	<body>
-		@include('sidebar')
-		
+		@if (Auth::user()->role == 'seller')
+
+			@include('user_sidebar')
+		@else
+
+			@include('sidebar')
+		@endif
+
 		@include('topbar')
 
 		<div class="center" id="app_container">

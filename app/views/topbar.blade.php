@@ -28,12 +28,12 @@
 
 				<span class="username">
 
-					<a class="username" href="">{{ Auth::user()->first_name; }}</a>
+					<a class="username">{{ Auth::user()->first_name; }}</a>
 				</span>
 
 				<span class="username">
 
-					<a class="option" href="{{ URL::to('logout') }}">Logout</a>
+					<a class="logout" href="{{ URL::to('logout') }}">Logout</a>
 				</span>
 			</div>
 		</div>

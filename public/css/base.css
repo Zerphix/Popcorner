@@ -1,5 +1,5 @@
 /* v1.0 | 20080212 */
- 
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,11 +20,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 html {
 
-	background: url('/img/background.jpg') no-repeat fixed center;
+	background: url('/img/wall3.jpg') no-repeat fixed center;
     -webkit-background-size: cover;
        -moz-background-size: cover;
     	 -o-background-size: cover;
-    
+
     background-size: cover;
 }
 
@@ -165,8 +165,8 @@ input.main_search {
 	padding-left: 12px;
 	padding-right: 12px;
 
-	webkit-border-radius: 15px; 
-      -moz-border-radius: 15px; 
+	webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
            border-radius: 15px;
 
     font-size: 13px;
@@ -220,7 +220,24 @@ a.username {
 
 a.username:hover {
 
-	text-decoration: underline;
+	text-decoration: none;
+}
+
+a.logout {
+
+  margin-right: 10px;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  text-decoration: none;
+
+  color: gray;
+}
+
+a.logout:hover {
+
+  text-decoration: underline;
 }
 
 a.option {
@@ -235,11 +252,6 @@ a.option {
 	color: gray;
 }
 
-a.option:hover {
-
-	text-decoration: underline;
-}
-
 a.task {
 
 	margin-right: 10px;
@@ -252,10 +264,22 @@ a.task {
 	color: gray;
 }
 
+a.task:hover {
+
+  text-decoration: underline;
+}
+
 a.movie_name {
 
 	font-size: 13px;
 	color: gray;
+
+  text-decoration: none;
+}
+
+a.movie_name:hover {
+
+  text-decoration: underline;
 }
 
 div#user_picture {
@@ -272,8 +296,8 @@ div#user_picture>img {
 	width: 42px;
 	height: 42px;
 
-	webkit-border-radius: 21px; 
-      -moz-border-radius: 21px; 
+	webkit-border-radius: 21px;
+      -moz-border-radius: 21px;
            border-radius: 21px;
 }
 
@@ -301,8 +325,8 @@ div#popular_movie {
 
 	padding: 10px;
 
-	webkit-border-radius: 10px; 
-      -moz-border-radius: 10px; 
+	webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
            border-radius: 10px;
 
 	background: white;
@@ -321,8 +345,8 @@ div#coming_movie {
 
 	padding: 10px;
 
-	webkit-border-radius: 10px; 
-      -moz-border-radius: 10px; 
+	webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
            border-radius: 10px;
 
 	background: white;
@@ -345,8 +369,8 @@ div#latest_movie {
 
 	border: 1px solid gray;
 
-	webkit-border-radius: 10px; 
-      -moz-border-radius: 10px; 
+	webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
            border-radius: 10px;
 
 	background: white;
