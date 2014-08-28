@@ -1,7 +1,137 @@
-table#client_list, th, td {
+div#client_list {
 
-	max-width: 900px;
+	position: absolute;
+
+	width: 886px;
 
 	border: 1px solid gray;
+
+	webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+					border-radius: 10px;
+
 	background: white;
+}
+
+a#username {
+
+	font-size: 22px;
+	font-weight: bolder;
+	color: gray;
+}
+
+a#useremail {
+
+	font-size: 14px;
+	font-weight: lighter;
+	color: #08C;
+}
+
+a#usertelephone {
+
+	font-size: 20px;
+	font-weight: bolder;
+	color: gray;
+}
+
+a#usercity {
+
+	font-size: 13px;
+	font-weight: bolder;
+	color: gray;
+}
+
+a#usertask {
+
+	text-decoration: none;
+
+	font-size: 13px;
+	font-weight: bolder;
+	color: gray;
+
+	margin-left: 10px;
+}
+
+a#usertask:hover {
+
+	text-decoration: underline;
+}
+
+div#client {
+
+	float:left;
+
+	border: 1px solid white;
+
+	width: 370px;
+	height: 135px;
+
+	margin-left: 27px;
+	margin-top: 27px;
+	margin-bottom: 27px;
+
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+		 -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+					box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+	padding: 15px;
+}
+
+div#client:hover {
+
+	border: 1px solid #08C;
+}
+
+div#client_box_left {
+
+	float: left;
+
+	width: 120px;
+}
+
+div#client_box_right {
+
+	float: left;
+
+	width: 240px;
+	height: 124px;;
+
+	margin-left: 10px;
+
+	word-wrap: break-word;
+}
+
+div#useremail {
+
+	margin-top: -1px;
+}
+
+div#usertelephone {
+
+	margin-top: 20px;
+}
+
+div#usercity {
+
+	margin-top: 7px;
+}
+
+div#useraddress {
+
+	margin-top: 7px;
+}
+
+div#usertasks {
+
+	float: right;
+}
+
+img#userpicture {
+
+	width: 120px;
+	height: 120px;
+
+	webkit-border-radius: 60px;
+		-moz-border-radius: 60px;
+				 border-radius: 60px;
 }

@@ -56,4 +56,7 @@ Route::group(array('before' => 'auth'), function()
 
 	// Mensajes de resultado de los registros
 	Route::get('result', function() { return View::make('result'); });
+
+	// Vista de todos los clientes registrados en el sistema
+	Route::get('clients', array('uses' => 'ClientsController@allClients'));
 });
