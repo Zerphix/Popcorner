@@ -2,10 +2,7 @@ div#movie_list {
 
 	position: absolute;
 
-	margin-bottom: 40px;
-
 	width: 890px;
-	height: auto;
 
 	border: 1px solid gray;
 
@@ -32,4 +29,141 @@ div#movie_fromlist {
 
 	width: 130px;
 	height: 190px;
+}
+
+div#option-form {
+
+	width: 800px;
+}
+
+label#createput {
+
+	font-size: 13px;
+	font-weight: bold;
+
+	color: gray;
+}
+
+input.name {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.trailer {
+
+	border: 1px solid gray;
+
+	width: 380px;
+	height: 23px;
+
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+select.genre {
+
+	border: 1px solid gray;
+
+	width: 120px;
+	height: 23px;
+
+	margin-left: 45px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+select.classification {
+
+	border: 1px solid gray;
+
+	width: 119px;
+	height: 23px;
+
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+textarea.textarea {
+
+	border: 1px solid gray;
+
+	width: 375px;
+	height: 200px;
+
+	margin-left: 100px;
+	margin-bottom: 30px;
+
+	padding: 12px;
+
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+				  border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.poster {
+
+	margin-left: 45px;
+	margin-bottom: 30px;
+}
+
+div#submit {
+
+	margin-left: 415px;
+}
+
+h1#error_message {
+
+	font-size: 25px;
+
+	font-weight: lighter;
+
+	margin-bottom: 20px;
+}
+
+h1#result_message {
+
+	font-size: 25px;
+
+	font-weight: lighter;
 }

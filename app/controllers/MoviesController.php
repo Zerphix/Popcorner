@@ -79,27 +79,74 @@ class MoviesController extends \BaseController
 	  return View::make('movies', array('movies' => $movie));
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('movies');
-	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
+	// Muestra el formulario para creat una nueva película
 	public function create()
 	{
-		//
-	}
+		// Obtenemos los campos y los limpiamos para guadarlos
+		$movie_name 		= ucwords(strtolower(e(Input::get('name'))));
+		$movie_trailer 	= e(Input::get('trailer'));
 
+		// Tomamos el trailer y extraemos el codigo
+		$patterm 			 = explode('/',$movie_trailer);
+		$movie_trailer = end($patterm);
+
+		$movie_genre		= e(Input::get('genre'));
+		$classification	= e(Input::get('classification'));
+		$synopsis				= e(Input::get('synopsis'));
+
+		// Armamos un nuevo nombre para el archivo y lo guardamos como jpg
+		$new_name	  = strtolower(str_replace(' ', '', $movie_name));
+		$final_name_poster = $new_name . '.jpg';
+
+		// Creamos unas reglas basicas que deben cumplir
+		$rules = array(
+            'name'    			 	=> 'required|min:2|max:50|unique:movies',
+            'trailer' 				=> 'required|min:5|max:50',
+						'genre' 					=> 'required',
+						'classification'	=> 'required',
+						'synopsis'				=> 'required|min:10',
+						'poster'  				=> 'required'
+    );
+
+		// Mensajes de errores
+    $messages = array(
+			'required' 	=> 'El campo :attribute es obligatorio.',
+			'unique' 		=> 'El email ingresado ya existe en la base de datos',
+      'min' 			=> 'El campo :attribute no puede tener menos de :min carácteres.',
+      'max' 			=> 'El campo :attribute no puede tener más de :min carácteres.',
+    );
+
+		// Validamos que todo este bien
+		$validation = Validator::make(Input::all(), $rules, $messages);
+
+		// Si falla la validación
+		if ($validation->fails())
+		{
+			// Devolvemos los mensajes de error
+			return Redirect::to('create-movie')->with('errors', 'You have errors in your form, please fill again.');
+		}
+
+		else
+		{
+			// Toma los datos en array y los guarda en la BD
+			$query = DB::table('movies')->insert(array(
+				'released_at' 		=> '2014-08-30',
+				'name' 						=> $movie_name,
+				'poster' 					=> $final_name_poster,
+				'price'   				=> '10',
+				'genre'   				=> $movie_genre,
+				'synopsis' 				=> $synopsis,
+				'classification' 	=> $classification,
+				'trailer' 				=> $movie_trailer
+			));
+
+			// Movemos el archivo original a la carpeta de los posters de las películas
+			Input::file('poster')->move(public_path().'/poster', $final_name_poster);
+
+			// Devolvemos con un mensaje de confirmación
+			return Redirect::to('result')->with('mensaje','The film ' . $movie_name . ' was successfully added to the system.');
+		}
+	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -108,7 +155,7 @@ class MoviesController extends \BaseController
 	 */
 	public function store()
 	{
-		//
+
 	}
 
 

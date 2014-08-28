@@ -47,4 +47,13 @@ Route::group(array('before' => 'auth'), function()
 	// Vista para mostrar toda la información de la película con el metodo infoMovies.
 	// Pasamos la variable movie_name por get y con ella obtenemos el resto de información
 	Route::get('movie/{movie_name}', array('uses' => 'MoviesController@infoMovie'));
+
+	// Ruta para la creación de nuevas películas, va por GET y muestra el form
+	Route::get('create-movie', function() { return View::make('create-movie'); });
+
+	// Recibe por POST los datos del form para agregarlos a la BD
+	Route::post('create-movie', array('uses' => 'MoviesController@create'));
+
+	// Mensajes de resultado de los registros
+	Route::get('result', function() { return View::make('result'); });
 });

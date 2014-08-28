@@ -49,12 +49,5 @@
 
       <a class="task" href="../movies/coming">Coming Movies</a>
     </div>
-
-    <div id="home_task">
-
-      <img id="task" src="{{ asset('img/m_task.png') }}">
-
-      <a class="task" href="#">Create Movie</a>
-    </div>
   </div>
 </div>

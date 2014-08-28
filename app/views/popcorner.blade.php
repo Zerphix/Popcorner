@@ -20,7 +20,7 @@
 
 				{{-- Contenedor izquierdo --}}
 				<div id="left_top_box">
-					
+
 					<div id="base_icon">
 						<a href="/"><img src="{{ asset('img/top_logo.png') }}"></a>
 					</div>
@@ -33,13 +33,13 @@
 					<div id="username">
 
 						<label id="logput">Username: </label>
-						<input class="logput" name="username" type="text" placeholder="Username">
+						<input class="logput" name="username" type="text" placeholder="Username" maxlength="10">
 					</div>
 
 					<div id="password">
 
 						<label id="logput">Password: </label>
-						<input class="logput" name="password" type="password" placeholder="Password">
+						<input class="logput" name="password" type="password" placeholder="Password" maxlength="60">
 					</div>
 
 					<div id="submit">

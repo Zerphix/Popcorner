@@ -54,7 +54,7 @@
 
 			<img id="task" src="{{ asset('img/m_task.png') }}">
 
-			<a class="task" href="#">Create Movie</a>
+			<a class="task" href="../create-movie">Create Movie</a>
 		</div>
 	</div>
 
@@ -89,21 +89,21 @@
 
 		<div id="home_task">
 
-			<img id="task" src="{{ asset('img/m_task.png') }}">
+			<img id="task" src="{{ asset('img/r_task.png') }}">
 
 			<a class="task" href="">Rents By Day</a>
 		</div>
 
 		<div id="home_task">
 
-			<img id="task" src="{{ asset('img/m_task.png') }}">
+			<img id="task" src="{{ asset('img/r_task.png') }}">
 
 			<a class="task" href="">Rents By Employee</a>
 		</div>
 
 		<div id="home_task">
 
-			<img id="task" src="{{ asset('img/m_task.png') }}">
+			<img id="task" src="{{ asset('img/r_task.png') }}">
 
 			<a class="task" href="">Client Ranking</a>
 		</div>
