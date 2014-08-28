@@ -92,10 +92,19 @@ class MoviesController extends \BaseController
 
 		$movie_genre		= e(Input::get('genre'));
 		$classification	= e(Input::get('classification'));
-		$synopsis				= e(Input::get('synopsis'));
+
+		// Arreglo especial para la fecha de estreno
+		$day	 = e(Input::get('day'));
+		$month = e(Input::get('month'));
+		$year	 = e(Input::get('year'));
+
+		$release_date = $year . '-' . $month . '-' . $day;
+
+		// Sinopsis de la película
+		$synopsis	= e(Input::get('synopsis'));
 
 		// Armamos un nuevo nombre para el archivo y lo guardamos como jpg
-		$new_name	  = strtolower(str_replace(' ', '', $movie_name));
+		$new_name	  			 = strtolower(str_replace(' ', '', $movie_name));
 		$final_name_poster = $new_name . '.jpg';
 
 		// Creamos unas reglas basicas que deben cumplir
@@ -104,6 +113,9 @@ class MoviesController extends \BaseController
             'trailer' 				=> 'required|min:5|max:50',
 						'genre' 					=> 'required',
 						'classification'	=> 'required',
+						'day'							=> 'required',
+						'month'						=> 'required',
+						'year'						=> 'required',
 						'synopsis'				=> 'required|min:10',
 						'poster'  				=> 'required'
     );
@@ -130,7 +142,7 @@ class MoviesController extends \BaseController
 		{
 			// Toma los datos en array y los guarda en la BD
 			$query = DB::table('movies')->insert(array(
-				'released_at' 		=> '2014-08-30',
+				'released_at' 		=> $release_date,
 				'name' 						=> $movie_name,
 				'poster' 					=> $final_name_poster,
 				'price'   				=> '10',
