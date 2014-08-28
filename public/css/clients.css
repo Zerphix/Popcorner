@@ -57,6 +57,116 @@ a#usertask:hover {
 	text-decoration: underline;
 }
 
+input.email {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-left: 32px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.city {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-left: 43px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.cityzone {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-left: 8px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.address {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-left: 16px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.telephone {
+
+	border: 1px solid gray;
+
+	width: 382px;
+	height: 23px;
+
+	margin-left: 5px;
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+					border-radius: 15px;
+
+		font-size: 13px;
+}
+
+input.userpicture {
+
+	margin-bottom: 30px;
+
+	padding-left: 12px;
+	padding-right: 12px;
+
+	font-size: 13px;
+}
+
 div#client {
 
 	float:left;
@@ -64,7 +174,7 @@ div#client {
 	border: 1px solid white;
 
 	width: 370px;
-	height: 135px;
+	height: 142px;
 
 	margin-left: 27px;
 	margin-top: 27px;

@@ -47,8 +47,8 @@
         </div>
 
         <div id="usertasks">
-          <a id="usertask" href="#">Edit</a>
-          <a id="usertask" href="#">Delete</a>
+          <a id="usertask" href="../edit-client/{{ $client->email }}">Edit</a>
+          <a id="usertask" href="../delete-client/{{ $client->email }}">Delete</a>
         </div>
       </div>
     </div>

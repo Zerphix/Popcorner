@@ -54,9 +54,27 @@ Route::group(array('before' => 'auth'), function()
 	// Recibe por POST los datos del form para agregarlos a la BD
 	Route::post('create-movie', array('uses' => 'MoviesController@create'));
 
+	// Vista para editar las películas
+	Route::get('edit-movie/{movie_id}', array('uses' => 'MoviesController@edit'));
+
 	// Mensajes de resultado de los registros
 	Route::get('result', function() { return View::make('result'); });
 
 	// Vista de todos los clientes registrados en el sistema
 	Route::get('clients', array('uses' => 'ClientsController@allClients'));
+
+	// Ruta para la creación de nuev@s clientes, va por GET y muestra el form
+	Route::get('create-client', function() { return View::make('create-client'); });
+
+	// Recibe por POST los datos del form para agregarlos a la BD
+	Route::post('create-client', array('uses' => 'ClientsController@create'));
+
+	// Delete Clients
+	Route::get('delete-client/{email}', array('uses' => 'ClientsController@delete'));
+
+	// Delete Clients
+	Route::get('edit-client/{email}', array('uses' => 'ClientsController@edit'));
+
+	// Recibe por POST los datos para editar
+	Route::post('edit-client', array('uses' => 'ClientsController@update'));
 });

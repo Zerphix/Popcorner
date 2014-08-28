@@ -64,13 +64,14 @@
 
 			<div id="movie_tasks">
 
-				<a id="task_link" href="#">Edit this movie</a>
+				<a id="task_link" href="../edit-movie/{{ $movie->movie_id }}">Edit this movie</a>
 			</div>
 
+			<!-- Comentada ya que aun esta un poco buggy la interfaz
 			<div id="movie_tasks">
 
 				<center><a id="task_link" href="#">Delete</a></center>
-			</div>
+			</div>-->
 		</div>
 	@endforeach
 @stop

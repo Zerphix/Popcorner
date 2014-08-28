@@ -160,40 +160,13 @@ class MoviesController extends \BaseController
 		}
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function edit($id)
 	{
-		//
-	}
+		$movie = DB::select('SELECT * FROM movies WHERE movie_id = "' . $id . '"');
 
+		// Devolvemos un array con los datos de este cliente
+		return View::make('edit-movie', array('movies' => $movie));
+	}
 
 	/**
 	 * Update the specified resource in storage.

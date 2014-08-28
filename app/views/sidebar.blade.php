@@ -76,7 +76,7 @@
 
 			<img id="task" src="{{ asset('img/c_task.png') }}">
 
-			<a class="task" href="">Create Client</a>
+			<a class="task" href="../create-client">Create Client</a>
 		</div>
 	</div>
 
