@@ -23,7 +23,7 @@ class AuthController extends BaseController
       }
 
       // 2do grupo - Usuarios sin privilegios
-      elseif ($role == 'seller')
+      elseif ($role == 'popcorner')
       {
         return Redirect::to('home');
       }

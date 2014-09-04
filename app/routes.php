@@ -20,7 +20,7 @@ Route::post('/', array('uses'=> 'AuthController@userLogin'));
 // Vista para cerrar sessión
 Route::get('logout', array('uses' => 'AuthController@userLogout'));
 
-// Rutas con acceso restingido
+// Rutas con acceso restringido
 Route::group(array('before' => 'auth'), function()
 {
 	// Vista de prueba
@@ -49,7 +49,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('movie/{movie_name}', array('uses' => 'MoviesController@infoMovie'));
 
 	// Ruta para la creación de nuevas películas, va por GET y muestra el form
-	Route::get('create-movie', function() { return View::make('create-movie'); });
+	Route::get('create-movie', function() { return View::make('create-forms/create-movie'); });
 
 	// Recibe por POST los datos del form para agregarlos a la BD
 	Route::post('create-movie', array('uses' => 'MoviesController@create'));
@@ -57,24 +57,31 @@ Route::group(array('before' => 'auth'), function()
 	// Vista para editar las películas
 	Route::get('edit-movie/{movie_id}', array('uses' => 'MoviesController@edit'));
 
+	// Ruta para  guardar la edición de la película
+	Route::post('edit-movie/{movie_id}', array('uses' => 'MoviesController@saveEdit'));
+
+	// Ruta para eliminar películas
+	Route::get('delete-movie/{movie_id}', array('uses' => 'MoviesController@delete'));
+
 	// Mensajes de resultado de los registros
 	Route::get('result', function() { return View::make('result'); });
 
-	// Vista de todos los clientes registrados en el sistema
-	Route::get('clients', array('uses' => 'ClientsController@allClients'));
+	/***************
+	 * User Routes *
+	 ***************/
 
-	// Ruta para la creación de nuev@s clientes, va por GET y muestra el form
-	Route::get('create-client', function() { return View::make('create-client'); });
+	// Vista de todos los usuarios registrados en el sistema
+	Route::get('users', array('uses' => 'UsersController@showUsers'));
 
-	// Recibe por POST los datos del form para agregarlos a la BD
-	Route::post('create-client', array('uses' => 'ClientsController@create'));
+	// Ruta para la creación de nuevos usuarios, petición por GET
+	Route::get('create-user', function() { return View::make('create-forms/create-user'); });
 
-	// Delete Clients
-	Route::get('delete-client/{email}', array('uses' => 'ClientsController@delete'));
+	// Ruta para enviar los datos por POST al controlador encargado de crear al usuario
+	Route::post('create-user', array('uses' => 'UsersController@createUser'));
 
-	// Delete Clients
-	Route::get('edit-client/{email}', array('uses' => 'ClientsController@edit'));
+	// Edit Users
+	Route::get('edit-user/{email}', array('uses' => 'UsersController@editUser'));
 
-	// Recibe por POST los datos para editar
-	Route::post('edit-client', array('uses' => 'ClientsController@update'));
+	// Delete User
+	Route::get('delete-user/{email}', array('uses' => 'UsersController@deleteUser'));
 });

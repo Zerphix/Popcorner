@@ -50,62 +50,67 @@
 			<a class="task" href="../movies/coming">Coming Movies</a>
 		</div>
 
+		@if (Auth::user()->role !== 'popcorner')
 		<div id="home_task">
 
 			<img id="task" src="{{ asset('img/m_task.png') }}">
 
 			<a class="task" href="../create-movie">Create Movie</a>
 		</div>
+		@endif
 	</div>
 
-	<div id="client_tasks">
+	@if (Auth::user()->role !== 'popcorner')
 
-		<div id="home_task">
+		<div id="client_tasks">
 
-			<a class="option">CLIENT OPTIONS</a>
+			<div id="home_task">
+
+				<a class="option">CLIENT OPTIONS</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/c_task.png') }}">
+
+				<a class="task" href="../users">User List</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/c_task.png') }}">
+
+				<a class="task" href="../create-user">Create User</a>
+			</div>
 		</div>
 
-		<div id="home_task">
+		<div id="report_tasks">
 
-			<img id="task" src="{{ asset('img/c_task.png') }}">
+			<div id="home_task">
 
-			<a class="task" href="../clients">Client List</a>
+				<a class="option">REPORT TASK</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/r_task.png') }}">
+
+				<a class="task" href="">Rents By Day</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/r_task.png') }}">
+
+				<a class="task" href="">Rents By Employee</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/r_task.png') }}">
+
+				<a class="task" href="">Client Ranking</a>
+			</div>
 		</div>
-
-		<div id="home_task">
-
-			<img id="task" src="{{ asset('img/c_task.png') }}">
-
-			<a class="task" href="../create-client">Create Client</a>
-		</div>
-	</div>
-
-	<div id="report_tasks">
-
-		<div id="home_task">
-
-			<a class="option">REPORT TASK</a>
-		</div>
-
-		<div id="home_task">
-
-			<img id="task" src="{{ asset('img/r_task.png') }}">
-
-			<a class="task" href="">Rents By Day</a>
-		</div>
-
-		<div id="home_task">
-
-			<img id="task" src="{{ asset('img/r_task.png') }}">
-
-			<a class="task" href="">Rents By Employee</a>
-		</div>
-
-		<div id="home_task">
-
-			<img id="task" src="{{ asset('img/r_task.png') }}">
-
-			<a class="task" href="">Client Ranking</a>
-		</div>
-	</div>
+	@endif
 </div>

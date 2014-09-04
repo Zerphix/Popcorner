@@ -160,36 +160,35 @@ class MoviesController extends \BaseController
 		}
 	}
 
+	// Obtenemos los datos de la Película para enviarlos al formulario de edición
 	public function edit($id)
 	{
 		$movie = DB::select('SELECT * FROM movies WHERE movie_id = "' . $id . '"');
 
-		// Devolvemos un array con los datos de este cliente
-		return View::make('edit-movie', array('movies' => $movie));
+		// Devolvemos un array con los datos de la película
+		return View::make('edit-forms/edit-movie', array('movies' => $movie));
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+	public function delete($movie_id)
 	{
-		//
+		// Buscamos el nombre del poster de la película
+		$poster = DB::table('movies')->where('movie_id', $movie_id)->pluck('poster');
+
+		// Buscamos el nombre de la película para mostrarlo en el mensaje de confirmación
+		$name = DB::table('movies')->where('movie_id', $movie_id)->pluck('name');
+
+		// Comprobamos si el archivo existe (deberia) y de ser asi lo borra
+		if (File::exists(public_path() . '/poster/' . $poster))
+		{
+				File::delete(public_path() . '/poster/' . $poster);
+		}
+
+		// Lo borramos de la base de datos
+		DB::select('DELETE FROM movies WHERE movie_id = "' . $movie_id . '"');
+
+		// Devolvemos un mensaje de confirmación
+		return Redirect::to('result')->with('mensaje','The movie ' . $name . ' has been successfully deleted from the system.');
 	}
 
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
-
-
 }

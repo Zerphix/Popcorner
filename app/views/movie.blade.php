@@ -59,19 +59,22 @@
 
 			<div id="movie_tasks">
 
-				<a id="task_link" href="#">Rent this movie</a>
+				<a id="task_link" href="../rent/{{ strtolower(str_replace(' ', '-', $movie->name)) }}{{ $movie->movie_id }}">Rent this movie</a>
 			</div>
 
-			<div id="movie_tasks">
+			{{-- Definimos el acceso a las opciones de las películas --}}
+			@if (Auth::user()->role !== 'popcorner')
 
-				<a id="task_link" href="../edit-movie/{{ $movie->movie_id }}">Edit this movie</a>
-			</div>
+				<div id="movie_tasks">
 
-			<!-- Comentada ya que aun esta un poco buggy la interfaz
-			<div id="movie_tasks">
+					<a id="task_link" href="../edit-movie/{{ $movie->movie_id }}">Edit this movie</a>
+				</div>
 
-				<center><a id="task_link" href="#">Delete</a></center>
-			</div>-->
+				<div id="movie_tasks">
+
+					<center><a id="task_link" href="../delete-movie/{{ $movie->movie_id }}">Delete</a></center>
+				</div>
+			@endif
 		</div>
 	@endforeach
 @stop
