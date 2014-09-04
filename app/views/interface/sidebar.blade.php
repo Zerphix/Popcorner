@@ -66,7 +66,7 @@
 
 			<div id="home_task">
 
-				<a class="option">CLIENT OPTIONS</a>
+				<a class="option">USER TASKS</a>
 			</div>
 
 			<div id="home_task">
@@ -88,7 +88,7 @@
 
 			<div id="home_task">
 
-				<a class="option">REPORT TASK</a>
+				<a class="option">REPORT TASKS</a>
 			</div>
 
 			<div id="home_task">

@@ -189,6 +189,4 @@ class MoviesController extends \BaseController
 		// Devolvemos un mensaje de confirmación
 		return Redirect::to('result')->with('mensaje','The movie ' . $name . ' has been successfully deleted from the system.');
 	}
-
-	}
 }
