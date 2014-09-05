@@ -49,18 +49,23 @@
 
 			<a class="task" href="../movies/coming">Coming Movies</a>
 		</div>
-
-		@if (Auth::user()->role !== 'popcorner')
-		<div id="home_task">
-
-			<img id="task" src="{{ asset('img/m_task.png') }}">
-
-			<a class="task" href="../create-movie">Create Movie</a>
-		</div>
-		@endif
 	</div>
 
-	@if (Auth::user()->role !== 'popcorner')
+		@if (Auth::user()->role !== 'popcorner')
+		<div id="client_tasks">
+
+			<div id="home_task">
+
+				<a class="option">MOVIE TASKS</a>
+			</div>
+
+			<div id="home_task">
+
+				<img id="task" src="{{ asset('img/m_task.png') }}">
+
+				<a class="task" href="../create-movie">Create Movie</a>
+			</div>
+		</div>
 
 		<div id="client_tasks">
 
