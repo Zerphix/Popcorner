@@ -58,7 +58,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('edit-movie/{movie_id}', array('uses' => 'MoviesController@edit'));
 
 	// Ruta para  guardar la edición de la película
-	Route::post('edit-movie/{movie_id}', array('uses' => 'MoviesController@saveEdit'));
+	Route::post('save-edit-movie/{movie_id}', array('uses' => 'MoviesController@saveEdit'));
 
 	// Ruta para eliminar películas
 	Route::get('delete-movie/{movie_id}', array('uses' => 'MoviesController@delete'));

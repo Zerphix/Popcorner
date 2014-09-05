@@ -169,6 +169,58 @@ class MoviesController extends \BaseController
 		return View::make('edit-forms/edit-movie', array('movies' => $movie));
 	}
 
+	public function saveEdit($id)
+	{
+		// Obtenemos los campos del form
+		$movie_name 		= ucwords(strtolower(e(Input::get('name'))));
+		$movie_trailer 	= e(Input::get('trailer'));
+		$movie_genre 		= e(Input::get('genre'));
+		$classification	= e(Input::get('classification'));
+		$synopsis				= e(Input::get('synopsis'));
+
+		// Creamos unas reglas basicas que deben cumplir
+		$rules = array(
+						'name'    			 	=> 'required|min:2|max:50',
+						'trailer' 				=> 'required|min:5|max:50',
+						'genre' 					=> 'required',
+						'classification'	=> 'required',
+						'synopsis'				=> 'required|min:10'
+		);
+
+		// Definimos los mensajes de errores
+		$messages = array(
+			'required' 	=> 'El campo :attribute es obligatorio.',
+			'unique' 		=> 'El email ingresado ya existe en la base de datos',
+			'min' 			=> 'El campo :attribute no puede tener menos de :min carácteres.',
+			'max' 			=> 'El campo :attribute no puede tener más de :min carácteres.',
+		);
+
+		// Validamos que todo este bien
+		$validation = Validator::make(Input::all(), $rules, $messages);
+
+		// Si falla la validación
+		if ($validation->fails())
+		{
+			// Devolvemos los mensajes de error
+			return Redirect::to('edit-movie/' . $id)->with('errors', 'You have errors in your form, please fill again.');
+		}
+
+		else
+		{
+			// Actualizamos los campos
+			DB::table('movies')
+            ->where('movie_id', $id)
+            ->update(array('name' 					=> $movie_name,
+													 'trailer' 				=> $movie_trailer,
+													 'genre'   				=> $movie_genre,
+													 'classification' => $classification,
+													 'synopsis' 			=> $synopsis));
+
+			// Devolvemos con un mensaje de confirmación
+			return Redirect::to('result')->with('mensaje','The film ' . $movie_name . ' was successfully edited in the system.');
+		}
+	}
+
 	public function delete($movie_id)
 	{
 		// Buscamos el nombre del poster de la película
