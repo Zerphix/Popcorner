@@ -100,21 +100,14 @@
 
 				<img id="task" src="{{ asset('img/r_task.png') }}">
 
-				<a class="task" href="">Rents By Day</a>
+				<a class="task" href="">Rents by Date</a>
 			</div>
 
 			<div id="home_task">
 
 				<img id="task" src="{{ asset('img/r_task.png') }}">
 
-				<a class="task" href="">Rents By Employee</a>
-			</div>
-
-			<div id="home_task">
-
-				<img id="task" src="{{ asset('img/r_task.png') }}">
-
-				<a class="task" href="">Client Ranking</a>
+				<a class="task" href="">Rents by User</a>
 			</div>
 		</div>
 	@endif
