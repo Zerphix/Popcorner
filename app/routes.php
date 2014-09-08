@@ -67,6 +67,13 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('result', function() { return View::make('result'); });
 
 	/***************
+	* Rent Routes *
+	***************/
+
+	// Ruta para alquilar una película
+	Route::get('rent-movie/{user_id}/{movie_id}', array('uses' => 'RentsController@rentMovie'));
+
+	/***************
 	 * User Routes *
 	 ***************/
 

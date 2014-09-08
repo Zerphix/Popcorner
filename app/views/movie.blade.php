@@ -59,7 +59,7 @@
 
 			<div id="movie_tasks">
 
-				<a id="task_link" href="../rent/{{ strtolower(str_replace(' ', '-', $movie->name)) }}{{ $movie->movie_id }}">Rent this movie</a>
+				<a id="task_link" href="../rent-movie/{{ Auth::user()->id; }}/{{ $movie->movie_id }}">Rent this movie</a>
 			</div>
 
 			{{-- Definimos el acceso a las opciones de las películas --}}

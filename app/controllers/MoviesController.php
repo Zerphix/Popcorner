@@ -169,6 +169,7 @@ class MoviesController extends \BaseController
 		return View::make('edit-forms/edit-movie', array('movies' => $movie));
 	}
 
+	// Guardamos los datos nuevos de la película
 	public function saveEdit($id)
 	{
 		// Obtenemos los campos del form
