@@ -4,7 +4,7 @@
 
   <div id="popular_movie">
 
-    <h1 class="title">Most Popular</h1>
+    <h1 class="movie_title">Most Popular</h1>
 
     @foreach($popular as $movie)
     <div id="movie">
@@ -21,7 +21,7 @@
 
   <div id="coming_movie">
 
-    <h1 class="title">Coming Soon!</h1>
+    <h1 class="movie_title">Coming Soon!</h1>
 
     @foreach($coming as $movie)
     <div id="movie">
@@ -38,10 +38,10 @@
 
   <div id="latest_movie">
 
-    <h1 class="title">&nbsp;Latest Movies</h1>
+    <h1 class="movie_title">Latest Movies</h1>
 
     @foreach($ultimos as $movie)
-    <div id="movie_latest">
+    <div id="movie">
 
       <a href="movie/{{ $movie->name }}">
 
